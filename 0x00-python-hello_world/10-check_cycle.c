@@ -9,21 +9,17 @@
  */
 int check_cycle(listint_t *head)
 {
-	listint_t *tmp = head;
-	int firstValue = head->n;
-	int i = 0;
+	listint_t *tmp;
 
 	if (head == NULL)
 		return (0);
-	while (tmp != NULL)
+
+	while (head != NULL)
 	{
-		if (tmp->n == firstValue)
-			i++;
-		if (tmp->n == firstValue && i > 1)
-			break;
-		tmp = tmp->next;
+	        tmp = head;
+		head = head->next;
+	        if(tmp <= head)
+			return (1);
 	}
-	if (i > 1)
-		return (1);
 	return (0);
 }
