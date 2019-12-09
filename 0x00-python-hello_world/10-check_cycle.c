@@ -13,14 +13,14 @@ int check_cycle(listint_t *head)
 	int firstValue = head->n;
 	int i = 0;
 
-	if (head == NULL || head == head->next)
+	if (head == NULL)
 		return (0);
 	while (tmp != NULL)
 	{
-		if (tmp->n == firstValue && i > 1)
-			break;
 		if (tmp->n == firstValue)
 			i++;
+		if (tmp->n == firstValue && i > 1)
+			break;
 		tmp = tmp->next;
 	}
 	if (i > 1)
