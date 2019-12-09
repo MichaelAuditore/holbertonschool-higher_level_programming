@@ -13,7 +13,9 @@ int check_cycle(listint_t *head)
 	int firstValue = head->n;
 	int i = 0;
 
-	while (tmp->next != NULL)
+	if (head == NULL || head == head->next)
+		return (0);
+	while (tmp != NULL)
 	{
 		if (tmp->n == firstValue && i > 1)
 			break;
