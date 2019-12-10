@@ -1,6 +1,5 @@
-#include "lists.h"
+#include "lists.h"3
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * insert_node - insert node in a sorted linked list
  * @head: reference to the first node of list
@@ -15,7 +14,7 @@ listint_t *insert_node(listint_t **head, int number)
 	current = *head;
 
 	new = malloc(sizeof(listint_t));
-	if (new == NULL)
+	if (new == NULL || number > INT_MAX)
 		return (NULL);
 
 	new->n = number;
