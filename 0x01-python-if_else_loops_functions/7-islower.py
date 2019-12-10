@@ -1,12 +1,7 @@
 def islower(c):
-    '''
-    Validate is c is uppercase or lowercase
-
-    :param char c: Letter to validate
-    :type c: character or None
-    :return: True or false
-    :rtype: bool
-    '''
+    # Validate if a letter is upper or lower
+    #
+    # Return True is lowercase or False is upper
     if ord(c) >= 97 and ord(c) <= 122:
         return True
     else:
