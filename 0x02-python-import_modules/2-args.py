@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 if __name__ == "__main__":
     import sys
     arg = "argument:" if (len(sys.argv) == 2) else "arguments."\
