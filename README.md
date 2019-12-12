@@ -39,11 +39,23 @@ Python Language will use the PEP 8 style version 1.7 or superior
 	      What’s a traceback
 	      What are the arithmetic operators and how to use them
 
+	# Step 3:
+		How to import functions from another file
+		How to use imported functions
+		How to create a module
+		How to use the built-in function dir()
+		How to prevent code in your script from being executed when imported
+		How to use command line arguments with your Python programs
+
 # Conclusion
 
 	At step 1 all the files must be executable and it's First line will be a Shebang like #!/usr/bin/python3
 	and it will be tested by wc command to know the length of the files
 
+	At step 2 we solve problems using statements and different kind of loops, variables and arithmetic and logical operators
+
+	At step 3 we solve problems importing and modulin' our .py files to execute after, also we import sys to work with
+	line arguments.
 # Author
 
 Miguel Angel Parada Cañon <michael_v613@hotmail.com>
