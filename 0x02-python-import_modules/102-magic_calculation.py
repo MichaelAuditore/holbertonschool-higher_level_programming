@@ -1,4 +1,8 @@
-#!/usr/bin/python3
-__import__ magic_calculation_102
-print(add(3,4))
-print(sub(3,4))
+def magic_calculation(a, b):
+from magic_calculation_102 import add, sub
+    if a < b:
+        c = add(a, b)
+        for i in range(c, 90):
+            c = add(c , i)
+        return c
+    return sub(a, b)
