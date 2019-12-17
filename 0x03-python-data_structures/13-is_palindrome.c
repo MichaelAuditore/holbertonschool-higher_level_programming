@@ -8,8 +8,6 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *header;
-	listint_t *tail;
-	int length = 0;
 	int pos[1024], npos = 0, j;
 
 	if (*head == NULL)
@@ -17,17 +15,11 @@ int is_palindrome(listint_t **head)
 	if (head == NULL)
 		return (0);
 	header = *head;
-	tail = *head;
-	while (header->next != NULL)
+	for (npos = 0; npos++; header = header->next)
+		pos[npos] = header->n;
+	for (j = 0; j < npos; j++, npos--)
 	{
-		header = header->next;
-		length++;
-	}
-	for (npos = 0; npos <= length; npos++, tail = tail->next)
-		pos[npos] = tail->n;
-	for (j = 0; j < length; j++, length--)
-	{
-		if (pos[j] != pos[length])
+		if (pos[j] != pos[npos])
 			return (0);
 	}
 	return (1);
