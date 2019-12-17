@@ -47,6 +47,21 @@ Python Language will use the PEP 8 style version 1.7 or superior
 		How to prevent code in your script from being executed when imported
 		How to use command line arguments with your Python programs
 
+	# Step 4:
+
+  	       What are lists and how to use them
+  	       What are the differences and similarities between strings and lists
+  	       What are the most common methods of lists and how to use them
+  	       How to use lists as stacks and queues
+  	       What are list comprehensions and how to use them
+  	       What are tuples and how to use them
+  	       When to use tuples versus lists
+  	       What is a sequence
+  	       What is tuple packing
+  	       What is sequence unpacking
+  	       What is the del statement and how to use it
+
+
 # Conclusion
 
 	At step 1 all the files must be executable and it's First line will be a Shebang like #!/usr/bin/python3
@@ -56,6 +71,9 @@ Python Language will use the PEP 8 style version 1.7 or superior
 
 	At step 3 we solve problems importing and modulin' our .py files to execute after, also we import sys to work with
 	line arguments.
+
+	At step 4 we solve problems using lists and tuples
+
 # Author
 
 Miguel Angel Parada Cañon <michael_v613@hotmail.com>
