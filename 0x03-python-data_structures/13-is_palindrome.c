@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
  * is_palindrome - catch if a linked list is palindrome or not
  * @head: Pointer to the first node
@@ -12,8 +13,10 @@ int is_palindrome(listint_t **head)
 	int length = 0;
 	int pos;
 
-	if (*head == NULL || head == NULL)
+	if (*head == NULL)
 		return (1);
+	if (head == NULL)
+		return (0);
 	header = *head;
 	tail = *head;
 	while (tail->next != NULL)
