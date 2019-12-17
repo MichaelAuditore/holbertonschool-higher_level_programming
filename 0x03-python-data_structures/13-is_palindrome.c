@@ -7,18 +7,19 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int count = 0, nel[9999], j;
+	int length = 0, elements[9999], j;
 	listint_t *header = NULL;
 
 	if (head == NULL)
 		return (0);
 	if (*head == NULL)
 		return (1);
-	for (; header; count++, header = header->next)
-		nel[count] = header->n;
-	for (j = 0; j < count; j++, count--)
+	header = *head;
+	for (; header; length++, header = header->next)
+		elements[length] = header->n;
+	for (j = 0; j < length; j++, length--)
 	{
-		if (nel[j] != nel[count - 1])
+		if (elements[j] != elements[length - 1])
 			return (0);
 	}
 	return (1);
