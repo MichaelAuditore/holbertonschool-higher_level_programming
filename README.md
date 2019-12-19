@@ -8,7 +8,7 @@ Python Language will use the PEP 8 style version 1.7 or superior
 # General
 
 
-	# Step 1:
+	# 0x00:
 
 	      Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))
 	      Who created Python
@@ -21,7 +21,7 @@ Python Language will use the PEP 8 style version 1.7 or superior
 	      What are indexing and slicing in Python
 	      What is the official Python coding style and how to check your code with PEP 8
 
-	# Step 2:
+	# 0x01:
 	      Conditions statements and loops for Python Language
 	      Why indentation is so important in Python
 	      How to use the if, if ... else statements
@@ -39,7 +39,7 @@ Python Language will use the PEP 8 style version 1.7 or superior
 	      What’s a traceback
 	      What are the arithmetic operators and how to use them
 
-	# Step 3:
+	# 0x02:
 		How to import functions from another file
 		How to use imported functions
 		How to create a module
@@ -47,7 +47,7 @@ Python Language will use the PEP 8 style version 1.7 or superior
 		How to prevent code in your script from being executed when imported
 		How to use command line arguments with your Python programs
 
-	# Step 4:
+	# 0x03:
 
   	       What are lists and how to use them
   	       What are the differences and similarities between strings and lists
@@ -61,6 +61,18 @@ Python Language will use the PEP 8 style version 1.7 or superior
   	       What is sequence unpacking
   	       What is the del statement and how to use it
 
+	 # 0x04:
+
+	      What are set and how to use them
+	      What are the most common methods of set and how to use them
+	      When to use sets versus lists
+	      How to iterate into a set
+	      What are dictionary and how to use them
+	      When to use dictionaries versus lists or sets
+	      What is a key in a dictionary
+	      How to iterate into a dictionary
+	      What is a lambda function
+	      What is map, reduce and map functions
 
 # Conclusion
 
