@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 class Square:
     def __init__(self, size=0, position=(0, 0)):
         self.position = position
@@ -15,10 +17,10 @@ class Square:
             while (pos > 0):
                 print()
                 pos -= 1
-            x, y = self.size, self.size
-            for i in range(x):
+            h, v = self.size, self.size
+            for i in range(h):
                 nspaces = self.position[0]
-                for j in range(y):
+                for j in range(v):
                     while(nspaces > 0):
                         print("", end=" ")
                         nspaces -= 1
@@ -31,12 +33,12 @@ class Square:
 
     @size.setter
     def size(self, value):
+        if isinstance(value, int) and value >= 0:
+            self.__size = value
         if (not isinstance(value, int)):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
 
     @property
     def position(self):
@@ -47,7 +49,7 @@ class Square:
         is_num = 0
         if (not isinstance(value, tuple)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif len(value) != 2:
+        elif (len(value) != 2):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             for val in value:
@@ -59,5 +61,5 @@ of 2 positive integers")
                     is_num = 1
                     raise TypeError("position must be a tuple\
 of 2 positive integers")
-                if is_num == 0:
-                    self.__position = value
+            if is_num == 0:
+                self.__position = value
