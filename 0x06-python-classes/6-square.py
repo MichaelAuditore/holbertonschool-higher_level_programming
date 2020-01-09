@@ -8,22 +8,22 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
-        if self.__size == 0:
+        if self.size == 0:
             print()
         else:
-            pos = self.__position[1]
+            pos = self.position[1]
             while (pos > 0):
                 print()
                 pos -= 1
-            x, y = self.__size, self.__size
+            x, y = self.size, self.size
             for i in range(x):
-                nspaces = self.__position[0]
+                nspaces = self.position[0]
                 for j in range(y):
                     while(nspaces > 0):
-                        print(" ", end="")
+                        print("", end=" ")
                         nspaces -= 1
                     print("#", end="")
-                print()
+                print("")
 
     @property
     def size(self):
@@ -35,11 +35,12 @@ class Square:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        else:
+            self.__size = value
 
     @property
     def position(self):
-        return self.__size
+        return self.__position
 
     @position.setter
     def position(self, value):
