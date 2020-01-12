@@ -1,0 +1,45 @@
+TESTS FOR 5-text_indentation.py
+================================
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hola.Amigos:")
+Hola.
+<BLANKLINE>
+Amigos:
+<BLANKLINE>
+>>> text_indentation(45 + 10)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(":      Hello Everybody")
+:
+<BLANKLINE>
+Hello Everybody
+>>> text_indentation("        Hello Everybody   .")
+Hello Everybody   .
+<BLANKLINE>
+
+>>> text_indentation("Miguel                ")
+Miguel
+
+>>> text_indentation("       Miguel")
+Miguel
+
+>>> text_indentation("")
+
+>>> text_indentation("\n")
+<BLANKLINE>
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>

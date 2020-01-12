@@ -1,0 +1,40 @@
+TESTS FOR 0-add_integers.py
+===========================
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, -2)
+-1
+>>> add_integer(-2, 1)
+-1
+>>> add_integer("Hello", 1)
+Traceback (most recent call last):
+     ...
+TypeError: a must be an integer
+>>> add_integer(4, "Hello")
+Traceback (most recent call last):
+     ...
+TypeError: b must be an integer
+>>> add_integer(400.3, 2)
+402
+>>> add_integer(-2, 400.2)
+398
+>>> add_integer(float('inf'), 2)
+Traceback (most recent call last):
+     ...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(2, float('inf'))
+Traceback (most recent call last):
+     ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer([2, 4, 8])
+Traceback (most recent call last):
+     ...
+TypeError: a must be an integer
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(0, None)
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
