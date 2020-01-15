@@ -28,7 +28,7 @@ class Rectangle:
         return _str[:-1]
 
     def __repr__(self):
-        return ("Rectangle({}, {})".format(self.height, self.width))
+        return ("Rectangle({}, {})".format(self.width, self.height))
 
     def __del__(self):
         del self
