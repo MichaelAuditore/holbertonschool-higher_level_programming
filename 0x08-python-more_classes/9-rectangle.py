@@ -11,8 +11,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         Rectangle.number_of_instances += 1
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     def area(self):
         return (self.__height * self.__width)
@@ -32,8 +32,7 @@ class Rectangle:
         return _str[:-1]
 
     def __repr__(self):
-        return ("Rectangle(" + str(self.__width) + ","
-                + str(self.__height) + ")")
+        return ("Rectangle({}, {})".format(self.width, self.height))
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
@@ -56,25 +55,25 @@ class Rectangle:
         return Rectangle(size, size)
 
     @property
-    def height(self):
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        if type(value) is not int:
-            raise TypeError("heigth must be an integer")
-        if value < 0:
-            raise ValueError("heigth must be >= 0")
-        self.__height = value
-
-    @property
     def width(self):
-        return self.__width
+        return (self.__width)
 
     @width.setter
     def width(self, value):
         if type(value) is not int:
             raise TypeError("width must be an integer")
-        if value < 0:
+        if (value < 0):
             raise ValueError("width must be >= 0")
         self.__width = value
+
+    @property
+    def height(self):
+        return (self.__height)
+
+    @height.setter
+    def height(self, value):
+        if type(value) is not int:
+            raise TypeError("heigth must be an integer")
+        if (value < 0):
+            raise ValueError("heigth must be >= 0")
+        self.__height = value
