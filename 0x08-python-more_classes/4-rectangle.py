@@ -28,8 +28,7 @@ class Rectangle:
         return _str[:-1]
 
     def __repr__(self):
-        return ("Rectangle(" + str(self.__width) + ","
-                + str(self.__height) + ")")
+        return ("Rectangle({}, {})".format(self.width, self.height))
 
     @property
     def height(self):
