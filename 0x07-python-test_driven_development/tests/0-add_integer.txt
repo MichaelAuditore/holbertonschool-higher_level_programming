@@ -1,8 +1,12 @@
 TESTS FOR 0-add_integers.py
 ===========================
 >>> add_integer = __import__('0-add_integer').add_integer
+
 >>> add_integer(1, -2)
 -1
+
+>>> add_integer(2)
+100
 >>> add_integer(-2, 1)
 -1
 >>> add_integer("Hello", 1)
@@ -48,5 +52,20 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 
 >>> add_integer(2, float('NaN'))
 Traceback (most recent call last):
-     ...
+    ...
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(float('NaN'), 2)
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(2, float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(float('nan'), 2)
+Traceback (most recent call last):
+    ...
 ValueError: cannot convert float NaN to integer
