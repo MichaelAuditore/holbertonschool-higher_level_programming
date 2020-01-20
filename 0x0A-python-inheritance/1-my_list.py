@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 class MyList(list):
     """Class list inherits list"""
     def print_sorted(self):
