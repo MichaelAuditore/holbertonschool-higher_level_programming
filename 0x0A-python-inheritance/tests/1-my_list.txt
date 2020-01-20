@@ -1,0 +1,67 @@
+TESTS FOR 1-my_list.py
+===========================
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append('a')
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  ...
+TypeError: unorderable types: str() < int()
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(3)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(1.5)
+>>> my_list.print_sorted()
+[1, 1.5, 2]
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append("Miguel")
+>>> my_list.append("Angel")
+>>> my_list.append("Ana")
+>>> my_list.print_sorted()
+['Ana', 'Angel', 'Miguel']
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(-1)
+>>> my_list.append(-2)
+>>> my_list.append(-3)
+>>> my_list.append(-4)
+>>> my_list.print_sorted()
+[-4, -3, -2, -1]
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append('a')
+>>> my_list.append('b')
+>>> my_list.append('c')
+>>> my_list.append('d')
+>>> my_list.print_sorted()
+['a', 'b', 'c', 'd']
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(True)
+>>> my_list.append(False)
+>>> my_list.append(False)
+>>> my_list.append(True)
+>>> my_list.print_sorted()
+[False, False, True, True]
