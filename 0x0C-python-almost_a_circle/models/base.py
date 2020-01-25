@@ -42,3 +42,16 @@ class Base:
         new = cls(1, 1)
         new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        from os import path
+        filename = cls.__name__ + ".json"
+        ls = []
+        if path.isfile(filename):
+            with open(filename, "r") as f:
+                for line in f:
+                    js = Base.from_json_string(line)
+                    for item in js:
+                        ls.append(cls.create(**item))
+        return (ls)
