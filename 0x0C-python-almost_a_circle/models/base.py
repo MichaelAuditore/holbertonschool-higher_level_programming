@@ -37,10 +37,14 @@ class Base:
         filename = cls.__name__ + ".json"
         ls = []
         with open(filename, "w") as f:
-            for obj in list_objs:
-                ls.append(obj.to_dictionary())
-            js = Base.to_json_string(ls)
-            f.write(js)
+            if list_objs is not None:
+                for obj in list_objs:
+                    ls.append(obj.to_dictionary())
+                    js = Base.to_json_string(ls)
+                    f.write(js)
+            else:
+                js = Base.to_json_string(ls)
+                f.write(js)
         f.closed
 
     @staticmethod
