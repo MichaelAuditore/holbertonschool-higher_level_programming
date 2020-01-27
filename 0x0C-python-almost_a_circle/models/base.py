@@ -52,7 +52,9 @@ class Base:
         """
         Returns a dictionary from a json string
         """
-        return (json.loads(json_string))
+        if json_string is not None:
+            return (json.loads(json_string))
+        return ([])
 
     @classmethod
     def create(cls, **dictionary):
