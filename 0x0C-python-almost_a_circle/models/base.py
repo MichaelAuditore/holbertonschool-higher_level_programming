@@ -40,8 +40,8 @@ class Base:
             if list_objs is not None:
                 for obj in list_objs:
                     ls.append(obj.to_dictionary())
-                    js = Base.to_json_string(ls)
-                    f.write(js)
+                js = Base.to_json_string(ls)
+                f.write(js)
             else:
                 js = Base.to_json_string(ls)
                 f.write(js)
