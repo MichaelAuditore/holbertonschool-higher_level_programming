@@ -61,7 +61,10 @@ class Base:
         """
         Create a new class using a dictionary
         """
-        new = cls(1, 1)
+        if (cls.__name__ == "Rectangle"):
+            new = cls(1, 1)
+        else:
+            new = cls(1)
         new.update(**dictionary)
         return new
 
