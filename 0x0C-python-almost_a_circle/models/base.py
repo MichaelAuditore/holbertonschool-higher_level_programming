@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Base module"""
 import json
 
 
@@ -9,6 +10,9 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+        Initializator for class when create an instance
+        """
         if id is not None:
             self.id = id
         else:
@@ -17,6 +21,9 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+        convert a list of dictionaries to json string
+        """
         js = "[]"
         if list_dictionaries is not None:
             js = json.dumps(list_dictionaries)
@@ -24,6 +31,9 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        save  a json into a file
+        """
         filename = cls.__name__ + ".json"
         ls = []
         with open(filename, "w") as f:
@@ -35,16 +45,26 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        Returns a dictionary from a json string
+        """
         return (json.loads(json_string))
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        Create a new class using a dictionary
+        """
         new = cls(1, 1)
         new.update(**dictionary)
         return new
 
     @classmethod
     def load_from_file(cls):
+        """
+        load a file and for each json string create a new instance
+        and returns a list of instances
+        """
         from os import path
         filename = cls.__name__ + ".json"
         ls = []
