@@ -1,3 +1,3 @@
 -- COUNT THE NUMBER OF ROWS WHO HAS A PATTERN
 -- PATTERN TO SEARCH ID=98
-SELECT COUNT(*) FROM first_table where id=89
+SELECT COUNT(*) FROM first_table where id=89;
