@@ -1,0 +1,2 @@
+-- GROUP BY SCORE AND CREATE A NEW COLUMN WHO COUNTS
+SELECT COUNT(name) as score, name FROM second_table GROUP BY name ORDER BY score DESC;
