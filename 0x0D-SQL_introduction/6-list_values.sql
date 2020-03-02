@@ -1,3 +1,3 @@
 -- SELECT ALL DATA INTO AN SPECIFIC TABLE
 -- NAME OF TABLE first_table
-SELECT * FROM hbtn_0c_0.first_table;
+SELECT * FROM first_table;
