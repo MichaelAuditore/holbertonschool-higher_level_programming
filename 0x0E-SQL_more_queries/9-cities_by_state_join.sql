@@ -3,5 +3,5 @@
 -- Results must be sorted in ascending order by cities.id
 -- You can use only one SELECT statement
 -- The database name will be passed as an argument of the mysql command
-SELECT c.id, c.name, s.name FROM cities AS c, states AS s
-WHERE c.state_id = s.id AND s.name = 'California';
+SELECT c.id, c.name, s.name FROM cities AS c
+JOIN states AS s ON c.state_id = s.id;
