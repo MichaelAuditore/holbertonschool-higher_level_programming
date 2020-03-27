@@ -19,8 +19,7 @@ if __name__ == "__main__":
         session = Session()
         result = session.query(State.name,
                                City.id,
-                               City.name).filter(
-            City.state_id == State.id)
+                               City.name).join(City, City.state_id == State.id)
         for row in result:
             print("{}: ({}) {}".format(row[0], row[1], row[2]))
         session.close()
