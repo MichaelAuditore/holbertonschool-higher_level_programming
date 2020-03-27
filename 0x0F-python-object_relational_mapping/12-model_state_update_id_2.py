@@ -20,3 +20,4 @@ if __name__ == "__main__":
             State.id == 2).first()
         row.name = "New Mexico"
         session.commit()
+        session.close()

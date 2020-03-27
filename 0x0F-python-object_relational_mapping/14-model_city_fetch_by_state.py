@@ -23,3 +23,4 @@ if __name__ == "__main__":
             City.state_id == State.id)
         for row in result:
             print("{}: ({}) {}".format(row[0], row[1], row[2]))
+        session.close()
