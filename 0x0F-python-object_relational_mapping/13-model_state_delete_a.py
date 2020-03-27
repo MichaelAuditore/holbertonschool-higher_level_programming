@@ -16,7 +16,6 @@ if __name__ == "__main__":
         Session = sessionmaker()
         Session.configure(bind=engine)
         session = Session()
-        row = session.query(State).filter(
-            State.id == 2).first()
-        row.name = "New Mexico"
+        delete_q = State.__table__.delete().where(State.name.like("%a%"))
+        session.execute(delete_q)
         session.commit()
