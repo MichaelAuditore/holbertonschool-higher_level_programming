@@ -13,4 +13,5 @@ class City(Base):
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
 
     def __repr__(self):
-        return '<City model {} {}> {}'.format(self.id,self.name, self.state_id)
+        return '<City model {} {}> {}'.format(
+            self.id, self.name, self.state_id)
