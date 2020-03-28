@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Script to list all states from hbtn_0e_0_usa with a condition """
+""" Script to list all states with a condition """
 if __name__ == "__main__":
     import MySQLdb as sql
     import sys
@@ -9,8 +9,8 @@ if __name__ == "__main__":
                      passwd=sys.argv[2],
                      db=sys.argv[3])
     c = db.cursor()
-    c.execute(
-        """SELECT * FROM states WHERE name like 'N%' ORDER BY id ASC;""")
+    c.execute("""SELECT id, name FROM states WHERE name COLLATE
+    latin1_general_cs LIKE 'N%' ORDER BY id ASC;""")
     for row in c.fetchall():
         print(row)
     c.close()
