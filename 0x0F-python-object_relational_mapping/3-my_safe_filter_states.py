@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ Script to list all states from hbtn_0e_0_usa """
 if __name__ == "__main__":
     import MySQLdb as sql
