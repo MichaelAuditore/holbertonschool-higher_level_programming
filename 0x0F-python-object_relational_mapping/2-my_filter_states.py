@@ -9,8 +9,10 @@ if __name__ == "__main__":
                      passwd=sys.argv[2],
                      db=sys.argv[3])
     c = db.cursor()
-    c.execute("""
-    SELECT id, name FROM states WHERE name=%s ORDER BY id""", (sys.argv[4],))
+    query = """SELECT id, name FROM states WHERE name='{}'
+    COLLATE latin1_general_cs
+    ORDER BY id""".format(sys.argv[4])
+    c.execute(query)
     for row in c.fetchall():
         print(row)
     c.close()
