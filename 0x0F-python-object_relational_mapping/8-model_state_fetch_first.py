@@ -4,16 +4,16 @@ script that lists all State objects
 from the database hbtn_0e_6_usa via SQLAlchemy
 """
 if __name__ == "__main__":
+    from sqlalchemy.orm import sessionmaker
+    from model_state import Base, State
     import sqlalchemy as db
     import sys
-    if (len(sys.argv) == 4):
-        engine = db.create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-            sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-        connection = engine.connect()
-        metadata = db.MetaData()
-        states = db.Table('states', metadata, autoload=True,
-                          autoload_with=engine)
-        query = db.select([states]).limit(1)
-        Result = connection.execute(query)
-        for row in Result.fetchall():
-            print("{}: {}".format(row[0], row[1]), end="\n")
+
+    engine = db.create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
+    query = session.query(State).limit(1)
+    if query:
+        print("{}: {}".format(query.id, query.name))
+    else:
+        print("Nothing")
