@@ -13,12 +13,12 @@ if __name__ == "__main__":
     c = db.cursor()
     query = """
     SELECT cities.name FROM cities
-    LEFT JOIN states ON states.id = cities.state_id
-    WHERE states.name='{}' ORDER BY cities.id
-    """.format(sys.argv[4])
-    c.execute(query)
+    JOIN states ON states.id = cities.state_id
+    WHERE states.name=%s ORDER BY cities.id
+    """
+    c.execute(query, (sys.argv[4],))
     result = [row[0] for row in c.fetchall()]
 
-    print(', '.join(rows))
+    print(', '.join(result))
     c.close()
     db.close()
