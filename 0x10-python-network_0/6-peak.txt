@@ -1,2 +1,4 @@
 O(log(n))
+O(n2)
 O(n)
+O(nlog(n))
