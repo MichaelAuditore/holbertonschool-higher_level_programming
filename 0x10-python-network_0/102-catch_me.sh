@@ -1,3 +1,3 @@
 #!/bin/bash
 # Script to get a catch me from url 0.0.0.0:5000/catch_me
-curl -sL 0.0.0.0:5000/catch_me -sX PUT -d "user_id=98" -H "Origin:HolbertonSchool"
+curl -sL -X PUT -d "user_id=98" -H "Origin:HolbertonSchool" 0.0.0.0:5000/catch_me 
