@@ -4,19 +4,11 @@
 
 def find_peak(list_of_integers):
     """find peak in a list of integers"""
-    if len(list_of_integers) == 0 or not list_of_integers:
+    if list_of_integers is None or len(list_of_integers) == 0:
         return (None)
-    elif len(list_of_integers) == 1:
-        return (list_of_integers[0])
     else:
-        for idx in range(1, len(list_of_integers)):
-            cur = list_of_integers[idx]
-            for number in range(idx + 1):
-                prev = list_of_integers[idx - 1]
-                if ((idx + 1) <= len(list_of_integers) - 1):
-                    after = list_of_integers[idx + 1]
-                else:
-                    after = 0
-                if (prev <= cur and after <= cur):
-                    peak = cur
-        return (peak)
+        p = list_of_integers[0]
+        for number in list_of_integers:
+            if number > p:
+                p = number
+        return p
