@@ -7,8 +7,8 @@ if __name__ == "__main__":
     import urllib.request
 
     var = {'email': '{}'.format(sys.argv[2])}
-    enc_data = urllib.parse.urlencode(var)
-    enc_data = enc_data.encode('ascii')
+    data = urllib.parse.urlencode(var)
+    data = data.encode('ascii')
     try:
         with urllib.request.urlopen(sys.argv[1], data) as response:
             for i in response:
