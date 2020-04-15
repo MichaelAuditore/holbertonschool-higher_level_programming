@@ -6,10 +6,10 @@ if __name__ == "__main__":
     import sys
     import requests
 
-    data = {'q': ""}
+    send = {'q': ""}
     if (len(sys.argv) > 1):
-        data['q'] = sys.argv[1]
-    r = requests.post("http://0.0.0.0:5000/search_user", data=data)
+        send['q'] = sys.argv[1]
+    r = requests.post("http://0.0.0.0:5000/search_user", data=send)
     try:
         json = r.json()
         if (len(js) == 0):
