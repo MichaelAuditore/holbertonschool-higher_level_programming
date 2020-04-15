@@ -6,8 +6,7 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    req = requests.get("{}".format(sys.argv[1]))
-    headers = req.headers
-    for header, value in headers.items():
-        if (header == "X-Request-Id"):
-            print(value)
+    req = requests.get(sys.argv[1])
+    headers = req.__dict__.get("headers")
+    x-id = headers.get("x-request-id")
+    print(x-id)
