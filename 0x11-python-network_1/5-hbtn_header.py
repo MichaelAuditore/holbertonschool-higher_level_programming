@@ -4,8 +4,9 @@ X-Request-Id using requests module
 """
 if __name__ == "__main__":
     import requests
+    import sys
 
-    req = requests.get("https://intranet.hbtn.io/status")
+    req = requests.get("{}".format(sys.argv[1]))
     headers = req.headers
     for header, value in headers.items():
         if (header == "X-Request-Id"):
