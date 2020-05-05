@@ -2,18 +2,20 @@
 /* getting the second biggest number in argvs */
 const args = process.argv.slice(2);
 
-if (!args[0] || args.length == 1) {
+if (!args[0] || args.length < 2) {
   console.log(0);
 } else {
-  let max = 0;
-  let len = args.length;
-  for (let i = 0; i < len; i++) {
-      if (args[i] > args[len]) {
-	  if (args[i] >= max && i < len - 1) {
-	      max = args[i];
-	  }
-      }
-      len--;
+  let max = -Infinity;
+  let result = -Infinity;
+
+  for (const value of args) {
+    const nr = Number(value);
+
+    if (nr > max) {
+      [result, max] = [max, nr]; // save previous max
+    } else if (nr < max && nr > result) {
+      result = nr; // new second biggest
+    }
   }
-  console.log(max);
+  console.log(result);
 }
