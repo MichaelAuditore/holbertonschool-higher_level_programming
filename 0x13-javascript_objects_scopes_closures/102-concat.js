@@ -1,10 +1,8 @@
 #!/usr/bin/node
+/* concat two files */
+const fs = require('fs');
 
-/* Concat files script with JS */
-const args = process.argv.slice(2);
-var fs = require('fs');
+const first = fs.readFileSync(process.argv[2], 'utf8');
+const second = fs.readFileSync(process.argv[3], 'utf8');
 
-const content = fs.readFileSync(args[0], 'utf-8');
-const content2 = fs.readFileSync(args[1], 'utf-8');
-
-fs.writeFileSync(args[2], (content + content2));
+result.writeFileSync(process.argv[4], (first + second));
