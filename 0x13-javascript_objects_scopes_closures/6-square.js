@@ -7,16 +7,12 @@ module.exports = class Square extends Rectangle {
   }
 
   /* charPrint prints a square with a char passed to the function */
-  charPrint (c) {
-    if (c) {
-      for (let i = 0; i < this.height; i++) {
-        for (let j = 0; j < this.width; j++) {
-          process.stdout.write(c);
-        }
-        process.stdout.write('\n');
+  charPrint (c = 'X') {
+    for (let i = 0; i < this.height; i++) {
+      for (let j = 0; j < this.width; j++) {
+        process.stdout.write(c);
       }
-    } else {
-      this.print();
+      process.stdout.write('\n');
     }
   }
 };
