@@ -5,10 +5,11 @@ const request = require('request');
 let times = 0;
 const URL = process.argv[2];
 const expected = 'https://swapi-api.hbtn.io/api/films';
-request(URL, function (error, status, body) {
-  if (error) {
-    console.error(error);
-  } else if (status.statusCode === 200 && URL === expected) {
+if (URL === expected) {
+  request(URL, function (error, status, body) {
+    if (error) {
+      console.error(error);
+    }
     const lista = JSON.parse(body);
     for (let i = 0; i < lista.results.length; i++) {
       for (let j = 0; j < lista.results[i].characters.length; j++) {
@@ -18,7 +19,5 @@ request(URL, function (error, status, body) {
       }
     }
     console.log(times);
-  } else {
-    console.log(3);
-  }
-});
+  });
+}
