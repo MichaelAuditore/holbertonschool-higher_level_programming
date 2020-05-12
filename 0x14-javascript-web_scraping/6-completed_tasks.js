@@ -9,12 +9,13 @@ request(URL, function (error, status, body) {
   } else {
     const dict = {};
     const tasks = JSON.parse(body);
-    for (let i = 0; i < tasks.length; i++) {
-      dict[tasks[i].userId] = 0;
-    }
-    for (let i = 0; i < tasks.length; i++) {
-      if (tasks[i].completed) {
-        dict[tasks[i].userId] += 1;
+    for (const task of tasks) {
+      if (task.completed) {
+        if (dict[task.userId]) {
+          dict[task.userId] += 1;
+        } else {
+          dict[task.userId] = 1;
+        }
       }
     }
     console.log(dict);
