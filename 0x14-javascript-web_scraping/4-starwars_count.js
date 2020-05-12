@@ -17,6 +17,8 @@ request(URL, function (error, status, body) {
         }
       }
     }
+    console.log(times);
+  } else {
+    console.log(3);
   }
-  console.log(times);
 });
