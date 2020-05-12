@@ -1,11 +1,11 @@
 #!/usr/bin/node
-/* Script to do a request to STAR WARS API
- and get the title of movie by ID passed as arg */
-const REQUEST = require('request');
-const URL = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-REQUEST(URL, function (err, resp, body) {
-  if (err) {
-    console.error(err);
+/* Request for STAR WARS API */
+const request = require('request');
+
+const page = 'http://swapi.co/api/films/' + process.argv[2];
+request(page, function (error, status, body) {
+  if (error) {
+    console.error(error);
   }
   console.log(JSON.parse(body).title);
 });
