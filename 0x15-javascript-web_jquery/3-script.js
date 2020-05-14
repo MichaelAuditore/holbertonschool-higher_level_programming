@@ -1,2 +1,2 @@
-let header = $('header');
+const header = $('header');
 header.addClass('red');
